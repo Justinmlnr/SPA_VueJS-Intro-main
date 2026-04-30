@@ -1,8 +1,10 @@
 import { createApp } from "vue";
 import "./style.scss";
 import App from "./App.vue";
-import { afficherMessage } from "./utils/message.js";
+import router from "./router";
 
-console.log(afficherMessage());
+const app = createApp(App);
 
-createApp(App).mount("#app");
+app.use(router);
+
+app.mount("#app");
